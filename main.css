@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  -ms-text-size-adjust: 100%;
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%
+}
+.wrapper-podcast {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.btn.control {
+  font-size: 0;
+}
+.btn.control div {
+  display: inline-block;
+  vertical-align: middle;
+}
+.org-section-bloque-podcast {
+  margin: auto;
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  font-size: 0;
+}
+.podcast__figure {
+  width: 102px;
+}
+.podcast__content {
+  width: calc(100% - 102px);
+}
+.podcast__figure,
+.podcast__content {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.btn.control div {
+  margin: 0 0.7rem 1rem;
+  margin-bottom: 1rem;
+}
+.btn.control div i {
+  color: #D70B0D;
+}
+.fa {
+  font-size: 1.5rem;
+}
+.btn.control div i.fa.fa-play {
+  width: 3em;
+  height: 3em;
+  line-height: 3em;
+  text-align: center;
+  color: #FFF;
+  border-radius: 100px;
+  /*background: #D70B0D;*/
+  position: relative;
+  background-image: linear-gradient(to right, #ed0607 , #c51215);
+}
+.btn.control div i.fa.fa-play:before {
+  font-size: 2.4rem;
+  position: absolute;
+  top: 50%;
+  left: 56%;
+  transform: translate(-50%, -50%);
+}
+.btn.control div i.fa.fa-backward,
+.btn.control div i.fa.fa-forward {
+  font-size: 1.6rem;
+}
+.seekbarControl .outer {
+  border-radius: 5px;
+  height: 4px;
+  width: 100%;
+  /*display: block;*/
+  background: #DBDBDB;
+  overflow: hidden;
+  position: relative;
+}
+.seekbarControl .outer .inner {
+  background: #D70B0D;
+  height: 100%;
+  display: inline-block;
+  width: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.seekbarControl .outer:hover {
+  cursor: pointer;
+}
+.volumeControl .wrapper .fa.fa-volume-up {
+  margin-right: 5px;
+  color: #D70B0D;
+}
+.volumeControl .wrapper .fa.fa-volume-up,
+.volumeControl .wrapper .outer {
+  display: inline-block;
+  vertical-align: middle;
+}
+.volumeControl {
+  /*width: 100px;*/
+}
+.volumeControl .wrapper .outer {
+  border-radius: 5px;
+  border: 1px inset gray;
+  height: 5px;
+  width: 10%;
+  display: inline-block;
+  background: #BCBCBC;
+  position: relative;
+}
+.volumeControl .wrapper .outer .inner {
+  background: #484848;
+  display: inline-block;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.volumeControl .wrapper .outer:hover {
+  cursor: pointer;
+}

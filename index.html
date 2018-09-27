@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="./main.css">
+</head>
+<body>
+	
+	<div class="wrapper-podcast">
+		<div class="org-section-bloque-podcast">
+			<figure class="podcast__figure">
+				<img src="./sin-guion.png" alt="">
+			</figure>
+			<div class="podcast__content">
+				
+				<audio id="audio">
+					<!--<source src="horse.ogg" type="audio/ogg">-->
+					<source src="https://ia800703.us.archive.org/3/items/mythium/BS_ATKM.mp3" type="audio/mpeg">
+					Your browser does not support the audio element.
+				</audio>			
+				<!--<div class="btn play">
+				<i class="fa fa-play" aria-hidden="true"></i>
+				<i class="fa fa-pause" aria-hidden="true"></i>
+				</div>-->
+				<div class="btn control">
+					<div id="undo">
+						<i class="fa fa-undo" aria-hidden="true"></i>  
+					</div>
+					<div id="backward">
+						<i class="fa fa-backward" aria-hidden="true"></i> 
+					</div>
+					<div id="play">
+						<i class="fa fa-play fa-stack" aria-hidden="true"></i>
+					</div>
+					<div id="forward">
+						<i class="fa fa-forward" aria-hidden="true"></i>
+					</div>
+					<div id="stop">
+						<i class="fa fa-stop" aria-hidden="true"></i>
+					</div>
+				</div>
+
+				<div class="volumeControl">
+					<div class="wrapper">
+						<i class="fa fa-volume-up" aria-hidden="true"></i>
+						<span class="outer">
+							<span class="inner"></span>
+						</span>
+					</div>
+				</div>
+
+			</div>
+			<div class="seekbarControl">
+				<span class="outer">
+					<span class="inner"></span>
+				</span>
+			</div>
+		</div>
+	</div>
+
+	<script src="./main.js"></script>
+</body>
+</html>

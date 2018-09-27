@@ -16,13 +16,16 @@ html {
   display: flex;
   width: 100%;
   height: 100vh;
+  background: rgba(205, 133, 63, 0.2);
 }
 .btn.control {
   font-size: 0;
+  text-align: center;
 }
 .btn.control div {
   display: inline-block;
   vertical-align: middle;
+  cursor: pointer;
 }
 .org-section-bloque-podcast {
   margin: auto;
@@ -30,12 +33,15 @@ html {
   max-width: 400px;
   margin: auto;
   font-size: 0;
+  box-shadow: 4px 3px 12px 0 #bbb;
+  background: #FFF;
 }
 .podcast__figure {
   width: 102px;
 }
 .podcast__content {
   width: calc(100% - 102px);
+  padding-left: 1rem;
 }
 .podcast__figure,
 .podcast__content {
@@ -44,8 +50,7 @@ html {
 }
 
 .btn.control div {
-  margin: 0 0.7rem 1rem;
-  margin-bottom: 1rem;
+  margin: 0 0.7rem;
 }
 .btn.control div i {
   color: #D70B0D;
@@ -53,6 +58,7 @@ html {
 .fa {
   font-size: 1.5rem;
 }
+.btn.control div i.fa.fa-pause,
 .btn.control div i.fa.fa-play {
   width: 3em;
   height: 3em;
@@ -73,13 +79,16 @@ html {
 }
 .btn.control div i.fa.fa-backward,
 .btn.control div i.fa.fa-forward {
-  font-size: 1.6rem;
+  font-size: 2rem;
+}
+.btn.control div i.fa.fa-undo {
+  transform: rotateY(180deg);
 }
 .seekbarControl .outer {
-  border-radius: 5px;
+  /*border-radius: 5px;*/
   height: 4px;
   width: 100%;
-  /*display: block;*/
+  display: block;
   background: #DBDBDB;
   overflow: hidden;
   position: relative;

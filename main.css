@@ -58,24 +58,27 @@ html {
 .fa {
   font-size: 1.5rem;
 }
-.btn.control div i.fa.fa-pause,
-.btn.control div i.fa.fa-play {
+.btn.control #play {
   width: 3em;
   height: 3em;
   line-height: 3em;
   text-align: center;
   color: #FFF;
+  border: none;
   border-radius: 100px;
   /*background: #D70B0D;*/
   position: relative;
   background-image: linear-gradient(to right, #ed0607 , #c51215);
 }
-.btn.control div i.fa.fa-play:before {
+.btn.control #play i.fa.fa-play:before {
   font-size: 2.4rem;
   position: absolute;
   top: 50%;
-  left: 56%;
+  left: 60%;
   transform: translate(-50%, -50%);
+}
+button:focus {
+  outline:0;
 }
 .btn.control div i.fa.fa-backward,
 .btn.control div i.fa.fa-forward {

@@ -144,6 +144,89 @@ button:focus {
 .volumeControl {
   /*width: 100px;*/
 }
+
+/* Base CSS styles - Several styles need to be applied to range inputs in all browsers to override their basic appearance. */
+input[type=range] {
+  -webkit-appearance: none; /* Hides the slider so that custom slider can be made */
+  width: 20%; /* Specific width is required for Firefox. */
+  background: transparent; /* Otherwise white in Chrome */
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type=range]:focus {
+  outline: none; /* Removes the blue border. You should probably do some kind of focus styling for accessibility reasons though. */
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent; /* Hides the slider so custom styles can be added */ 
+  border-color: transparent;
+  color: transparent;
+}
+
+/* Special styling for WebKit/Blink */
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  margin-top: -2.5px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */  
+  border: 1px solid #D70B0D;
+  height: 8px;
+  width: 8px;
+  border-radius: 100px;
+  background: #D70B0D;
+  cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+  border: 1px solid #D70B0D;
+  height: 8px;
+  width: 8px;
+  border-radius: 100px;
+  background: #D70B0D;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-thumb {
+  border: 1px solid #D70B0D;
+  height: 8px;
+  width: 8px;
+  border-radius: 100px;
+  background: #D70B0D;
+  cursor: pointer;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 20%;
+  height: 4px;
+  cursor: pointer;
+  background: #c8c8c8;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #c8c8c8;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: #c8c8c8;
+  border-color: #c8c8c8;
+  border-width: 1px 0;
+  color: #c8c8c8;
+}
+
+
+
+
+
+
 /*input[type=range]::-moz-range-track,
 input[type=range]::-ms-track,
 input[type=range]::-webkit-slider-runnable-track {

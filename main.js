@@ -25,8 +25,9 @@ window.addEventListener('load', function(){
 
 	//iconVolume.addEventListener('click', changeIconVolume);
 	btnVolume.addEventListener('mousemove', volume);
+	btnVolume.addEventListener('touchmove', volume);
 
-	seekbarOuter.addEventListener('click', clickSeekBarOuter);
+	seekbarOuter.addEventListener('click', progressSeekBarOuter);
 
 	//audio.addEventListener('play', messagePlay);
 	//audio.addEventListener('pause', messagePause);
@@ -44,13 +45,16 @@ window.addEventListener('load', function(){
 	
 	function volume(e) {
 		e.stopPropagation();
-		audio.volume = this.value * 0.01;
-		if(audio.volume == 0) {
-			iconVolume.setAttribute("class", "fa fa-volume-off");
-		}else {
-			iconVolume.setAttribute("class", "fa fa-volume-up");
+		if( e.type === 'mousemove' || e.type === 'touchmove') {
+			console.log(e.type);
+			audio.volume = this.value * 0.01;
+			if(audio.volume == 0) {
+				iconVolume.setAttribute("class", "fa fa-volume-off");
+			}else {
+				iconVolume.setAttribute("class", "fa fa-volume-up");
+			}
+			console.log(audio.volume);
 		}
-		console.log(audio.volume);
 	}
 
 	//function changeIconVolume(e) {
@@ -96,7 +100,8 @@ window.addEventListener('load', function(){
 		seekbarInner.style.width = seekbarPercentage + '%';
 	}
 
-	function clickSeekBarOuter(e) {
+	function progressSeekBarOuter(e) {
+		console.log(e.type, e.target);
 		if(!audio.ended && length!== undefined) {
 			var seekPosition = e.pageX - seekbarOuter.offsetLeft;
 			if(seekPosition >=0 && seekPosition < seekbarOuter.offsetLeft) {

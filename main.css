@@ -18,6 +18,11 @@ html {
   height: 100vh;
   background: rgba(205, 133, 63, 0.2);
 }
+@media (max-width: 678px) {
+  .wrapper-podcast {
+    padding: 0 1rem;
+  }
+}
 .btn.control {
   font-size: 0;
   text-align: center;
@@ -38,6 +43,9 @@ html {
 }
 .podcast__figure {
   width: 102px;
+}
+.podcast__figure img {
+  width: 100%;
 }
 .podcast__content {
   width: calc(100% - 102px);
@@ -83,17 +91,16 @@ html {
   color: #FFF;
   border: none;
   border-radius: 100px;
-  /*background: #D70B0D;*/
+  background-color: #D70B0D;
   position: relative;
-  background-image: linear-gradient(to right, #ed0607 , #c51215);
   cursor: pointer;
+  /*background-image: linear-gradient(to right, #ed0607 , #c51215);*/
 }
-.btn.control #play i.fa.fa-play:before {
-  font-size: 2.4rem;
-  position: absolute;
-  top: 50%;
-  left: 60%;
-  transform: translate(-50%, -50%);
+.btn.control #play.icon-play {
+  background-image: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="utf-8"%3F%3E%3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 40 40" style="enable-background:new 0 0 40 40;" xml:space="preserve"%3E%3Cstyle type="text/css"%3E .st0%7Bfill:%23FFFFFF;%7D .st1%7Bfill:%23FFFFFF;stroke:%23FFFFFF;stroke-miterlimit:10;%7D%0A%3C/style%3E%3Cg%3E%3Cg id="XMLID_1_"%3E%3Cpolygon class="st0" points="12.5,9.8 32.5,20.2 12.5,30.7 "/%3E%3Cpath class="st0" d="M13,10.6l18.4,9.6L13,29.9V10.6 M12,9v22.5l21.6-11.3L12,9L12,9z"/%3E%3C/g%3E%3C/g%3E%3Cline class="st1" x1="-62.5" y1="-25.5" x2="-67.5" y2="-16.5"/%3E%3Ccircle class="st1" cx="78" cy="58" r="20.5"/%3E%3Ccircle class="st1" cx="47" cy="3" r="0.5"/%3E%3C/svg%3E');
+}
+.btn.control #play.icon-pause {
+  background-image: url("data:image/svg+xml,%3C%3Fxml version='1.0' encoding='utf-8'%3F%3E%3C!-- Generator: Adobe Illustrator 21.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0) --%3E%3Csvg version='1.1' id='Layer_1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' x='0px' y='0px' viewBox='0 0 40 40' style='enable-background:new 0 0 40 40;' xml:space='preserve'%3E%3Cstyle type='text/css'%3E .st0%7Bfill:%23FFFFFF;%7D .st1%7Bfill:%23FFFFFF;stroke:%23FFFFFF;stroke-miterlimit:10;%7D%0A%3C/style%3E%3Cg%3E%3Cg id='XMLID_1_'%3E%3Cpolygon class='st0' points='-55.5,9.8 -35.5,20.2 -55.5,30.7 '/%3E%3Cpath class='st0' d='M-55,10.6l18.4,9.6L-55,29.9V10.6 M-56,9v22.5l21.6-11.3L-56,9L-56,9z'/%3E%3C/g%3E%3C/g%3E%3Cpath class='st1' d='M-130.5-25.5'/%3E%3Cpath class='st1' d='M-143.5,34.5'/%3E%3Crect x='10.5' y='9' class='st0' width='6' height='22'/%3E%3Crect x='23.5' y='9' class='st0' width='6' height='22'/%3E%3C/svg%3E%0A");
 }
 button:focus {
   outline:0;

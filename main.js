@@ -28,7 +28,7 @@ window.addEventListener('load', function(){
 		//iconVolume.addEventListener('click', changeIconVolume);
 		//btnVolume.addEventListener('mousemove', volume);
 		//btnVolume.addEventListener('touchmove', volume);
-		btnVolume.addEventListener('change', volume);
+		btnVolume.addEventListener('input', volume);
 
 		seekbarOuter.addEventListener('click', progressSeekBarOuter);
 
@@ -46,9 +46,8 @@ window.addEventListener('load', function(){
 			return minute + ":" + second; 
 		}
 		function volume(e) {
-			e.stopPropagation();
-			console.log(this);
 			audio.volume = this.value * 0.01;
+			console.log(audio.volume);
 		}
 		//function volume(e) {
 		//	e.stopPropagation();
@@ -71,7 +70,6 @@ window.addEventListener('load', function(){
 		//}
 
 		function playing(e) {
-			e.stopPropagation();
 			if(document.querySelector("#play").classList.value.includes("icon-play")) {
 				audio.play();
 				document.querySelector("#play.icon-play").classList.value = "icon-pause";
@@ -82,7 +80,6 @@ window.addEventListener('load', function(){
 		}
 
 		function paused() {
-			e.stopPropagation();
 			if(document.querySelector("#play").classList.value.includes("icon-pause")) {
 				document.querySelector("#play").classList.value = "icon-play";
 			}
@@ -90,7 +87,6 @@ window.addEventListener('load', function(){
 		}
 
 		function undo() {
-			e.stopPropagation();
 			starTime.innerHTML = "00:00";
 			if(document.querySelector("#play").classList.value.includes("icon-pause")) {
 				audio.play();

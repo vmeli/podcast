@@ -26,15 +26,16 @@ window.addEventListener('load', function(){
 		btnUndo.addEventListener('click', undo);
 
 		//iconVolume.addEventListener('click', changeIconVolume);
-		//btnVolume.addEventListener('mousemove', volume);
-		//btnVolume.addEventListener('touchmove', volume);
 		btnVolume.addEventListener('input', volume);
 
 		seekbarOuter.addEventListener('click', progressSeekBarOuter);
+		/*seekbarOuter.addEventListener('mousedown', progressSeekBarOuter);*/
 
 		//audio.addEventListener('play', messagePlay);
 		//audio.addEventListener('pause', messagePause);
 		audio.addEventListener('ended', messageEnded);
+
+		audio.addEventListener('timeupdate', updateSeekBar);
 
 		function messageEnded(e) {
 			console.log("publicar un ads");
@@ -47,7 +48,7 @@ window.addEventListener('load', function(){
 		}
 		function volume(e) {
 			audio.volume = this.value * 0.01;
-			console.log(audio.volume);
+			//console.log(audio.volume);
 		}
 		//function volume(e) {
 		//	e.stopPropagation();
@@ -100,7 +101,7 @@ window.addEventListener('load', function(){
 			return parseFloat(clacPercentage.toString());
 		}
 		
-		function updateSeekBar() {
+		function updateSeekBar(e) {
 			starTime.innerHTML = convertTime(audio.currentTime);
 			seekbarPercentage = getPercentage(audio.currentTime.toFixed(2), length.toFixed(2));
 			seekbarInner.style.width = seekbarPercentage + '%';
@@ -111,17 +112,17 @@ window.addEventListener('load', function(){
 			if(!audio.ended && length!== undefined) {
 				console.log("entrada 1");
 				var seekPosition = e.pageX - seekbarOuter.offsetLeft;
-				console.log(seekPosition, seekbarOuter.offsetLeft);
-				if(seekPosition >=0 && seekPosition < seekbarOuter.offsetLeft) {
+				console.log(e.pageX, seekbarOuter.offsetLeft);
+				//if(seekPosition >=0 && seekPosition < seekbarOuter.offsetLeft) {
 					console.log("entrada 2");
 					audio.currentTime = (seekPosition * audio.duration) / seekbarOuter.offsetWidth; 
 					updateSeekBar();
-				}
+				//}
 				//console.log(seekPosition, seekbarOuter.offsetLeft);
 			}
 		}
 
-		interval = setInterval(function(){
+		/*interval = setInterval(function(){
 			if(!audio.paused) {
 				updateSeekBar();
 			}
@@ -133,7 +134,7 @@ window.addEventListener('load', function(){
 				// 	clearInterval(interval);
 			}
 			console.log("setInterval");
-		},0);
+		},0);*/
 		
 	}
 });

@@ -27,6 +27,7 @@ html {
   font-size: 0;
   text-align: center;
 }
+.btn.control #play,
 .btn.control div {
   display: inline-block;
   vertical-align: middle;

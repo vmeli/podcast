@@ -37,8 +37,19 @@ window.addEventListener('load', function(){
 
 		audio.addEventListener('timeupdate', updateSeekBar);
 
+		btnBackward.addEventListener('click', function() {
+			audio.currentTime -= 5;
+		})
+
+		btnForward.addEventListener('click', function() {
+			audio.currentTime += 5;
+		})
+
 		function messageEnded(e) {
 			console.log("publicar un ads");
+			starTime.innerHTML = "00:00";
+				document.querySelector(".seekbarControl .inner").removeAttribute("style");
+				paused();
 		}
 
 		function convertTime(time) {

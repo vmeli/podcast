@@ -17,9 +17,21 @@ window.addEventListener('load', function(){
 		var length, interval, seekbarPercentage;
 
 		var audio = document.getElementById('audio');
-		length = audio.duration;
 
-		endTime.innerHTML = convertTime(audio.duration);
+		if(audio.duration) {
+				console.log("entro1");
+				length = audio.duration;				
+				endTime.innerHTML = convertTime(audio.duration);
+		}else {
+			console.log("entro2");
+			audio.addEventListener('loadedmetadata', function(e){
+				length = audio.duration;
+				endTime.innerHTML = convertTime(audio.duration);			
+			})
+		}
+		//console.log(length);
+
+		//endTime.innerHTML = convertTime(audio.duration);
 
 		btnPlay.addEventListener('click', playing);
 		btnStop.addEventListener('click', paused);
@@ -33,6 +45,7 @@ window.addEventListener('load', function(){
 
 		//audio.addEventListener('play', messagePlay);
 		//audio.addEventListener('pause', messagePause);
+		
 		audio.addEventListener('ended', messageEnded);
 
 		audio.addEventListener('timeupdate', updateSeekBar);
